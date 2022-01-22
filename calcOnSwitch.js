@@ -1,10 +1,15 @@
 function calc(operation, a, b) {
+    switch (!operation && !a && !b) {
+        case true:
+            return 'Error';
+    }
     switch (Number.isNaN(a) || Number.isNaN(b)) {
         case true:
             return 'Error';
     }
     switch (a) {
         case String(a):
+        case undefined:
             return 'Error';
     }
     switch (b) {
