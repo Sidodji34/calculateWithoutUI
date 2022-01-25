@@ -5,7 +5,8 @@ function Calc(operation, a, b) {
     'del': a / b,
     'mul': a * b,
   }
-  if (a && b && a === Number(a) && b === Number(b)) {
+  const isValid = (a && b && a === Number(a) && b === Number(b));
+  if (isValid) {
     for (let searchKey in objectOperations) {
       if (operation === searchKey) {
         operation = objectOperations[searchKey]
@@ -14,4 +15,4 @@ function Calc(operation, a, b) {
     } return 'Unknown operation';
   } return 'Error';
 }
-console.log(Calc('sum', 10, 5))
+console.log(Calc('sum', 10))
